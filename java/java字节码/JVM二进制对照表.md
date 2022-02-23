@@ -1,5 +1,28 @@
 
 
+##### Class文件格式表
+
+| 类型           | 名称                          | 数量                  |
+| -------------- | ----------------------------- | --------------------- |
+| u4             | magic（魔数）                 | 1                     |
+| u2             | minor_version（次版本号）     | 1                     |
+| u2             | major_version（主版本号）     | 1                     |
+| u2             | constant_pool_count（常量数） | 1                     |
+| cp_info        | constant_pool（常量池表）     | constant_pool_count-1 |
+| u2             | access_flags                  | 1                     |
+| u2             | this_class                    | 1                     |
+| u2             | supper_class                  | 1                     |
+| u2             | interfaces_count              | 1                     |
+| u2             | interfaces                    | interfaces_count      |
+| u2             | fields_count                  | 1                     |
+| field_info     | fields                        | fields_count          |
+| u2             | methods_count                 | 1                     |
+| method_info    | methods                       | methods_count         |
+| u2             | attributes_count              | 1                     |
+| attribute_info | attributes                    | attributes_count      |
+
+
+
 1. **常量池中的17种数据类型的结构总表**
 
 <table>

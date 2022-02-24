@@ -116,11 +116,12 @@
    616e 672f 4f62 6a65 6374 0100 063c 696e
    6974 3e01 0003 2829 5607 0008 0100 1b63
    6f6d 2f68 696c 6172 792f 636c 6173 7362
-   7974 652f 5369 6d70 6c65 0100 0443 6f64
-   6501 000f 4c69 6e65 4e75 6d62 6572 5461
+   7974 652f 5369 6d70 6c65 0100 0443 6f64 
+   6501 000f 4c69 6e65 4e75 6d62 6572 5461	
    626c 6501 000a 536f 7572 6365 4669 6c65
    0100 0b53 696d 706c 652e 6a61 7661 0021
-   0007 0002 0000 0000 0001 0001 0005 0006
+   0007 0002 0000 0000 
+   0001 0001 0005 0006
    0001 0009 0000 001d 0001 0001 0000 0005
    2ab7 0001 b100 0000 0100 0a00 0000 0600
    0100 0000 0300 0100 0b00 0000 0200 0c
@@ -138,11 +139,107 @@
    		00 02						index			=		#2		//
    		00 03						index			=		#3		//		
    #2	07							tag				=		7			//CONSTANT_Class_info
-   		
-   		
+   		0004						index			=		#4
+   #3	0c							tag				=		12		//CONSTANT_NameAndType_info
+   		00 05						index			=		#5		
+   		00 06						index			=		#6
+   #4	01							tag				=		1			//CONSTANT_Utf8_info
+   		00 10						length		=		16
+   		java/lang/Object
+   		6a 61 76 61 2f 6c 61 6e 67 2f 4f 62 6a 65 63 74
+   #5	01							tag				=		1			//CONSTANT_Utf8_info
+   		00 06						length		=		6	
+   		<init>
+   		3c 69 6e 69 74 3e
+   #6	01							tag				=		1			//CONSTANT_Utf8_info
+   		0003						length    = 	3
+   		()V
+   		28 29 56
+   #7	07							tag				=		7			//CONSTANT_Class_info
+   		0008						index			=		8		
+   #8	01							tag				=		1			//CONSTANT_Utf8_info
+   		00 1b						length    = 	27
+   		com/hilary/classbyte/Simple
+   		63 6f 6d 2f 68 69 6c 61 72 79 2f 63 6c 61 73 73 
+   		62 79 74 65 2f 53 69 6d 70 6c 65
+   #9	01							tag				=		1		//CONSTANT_Utf8_info
+   		00 04						length		=		4		
+   		Code
+   		43 6f 64 65
+   #10	01							tag				=		1		//CONSTANT_Utf8_info
+   		00 0f						length		=		15
+   		LineNumberTable
+   		4c 69 6e 65 4e 75 6d 62 65 72 54 61 62 6c 65
+   #11	01							tag				=		1		//CONSTANT_Utf8_info
+   		000a						length		=		10
+   		SourceFile
+   		53 6f 75 72 63 65 46 69 6c 65
+   #12	01							tag				=		1		//CONSTANT_Utf8_info
+   		00 0b						length		=		11	
+   		Simple.java
+   		53 69 6d 70 6c 65 2e 6a 61 76 61
+   ################access_flags###见访问标志表#######################		
+   0021	0x0020 | 0x0001 = 0x0021	(ACC_PUBLIC | ACC_SUPER)
+   ##################this_class##################################
+   00 07			常量池#7 -> #8 -> com/hilary/classbyte/Simple
+   ##################supper_class##################################
+   00 02			常量池#2 -> #8 -> java/lang/Object
+   #####################interfaces_count#####################
+   00 00
+   ####################interfaces###########################
+   00 00
+   ####################fields_count#########################
+   00 01
+   ####################fields###见字段###########################
+   00 01
    
    
    ```
+   
+   反编译
+   
+   ```
+   Last modified 2022年2月22日; size 207 bytes
+     SHA-256 checksum ab01e73c5f45994584869f834d7303534984b36a16b3846ad6cf988812fb6fdc
+     Compiled from "Simple.java"
+   public class com.hilary.classbyte.Simple
+     minor version: 0
+     major version: 60
+     flags: (0x0021) ACC_PUBLIC, ACC_SUPER
+     this_class: #7                          // com/hilary/classbyte/Simple
+     super_class: #2                         // java/lang/Object
+     interfaces: 0, fields: 0, methods: 1, attributes: 1
+   Constant pool:
+      #1 = Methodref          #2.#3          // java/lang/Object."<init>":()V
+      #2 = Class              #4             // java/lang/Object
+      #3 = NameAndType        #5:#6          // "<init>":()V
+      #4 = Utf8               java/lang/Object
+      #5 = Utf8               <init>
+      #6 = Utf8               ()V
+      #7 = Class              #8             // com/hilary/classbyte/Simple
+      #8 = Utf8               com/hilary/classbyte/Simple
+      #9 = Utf8               Code
+     #10 = Utf8               LineNumberTable
+     #11 = Utf8               SourceFile
+     #12 = Utf8               Simple.java
+   {
+     public com.hilary.classbyte.Simple();
+       descriptor: ()V
+       flags: (0x0001) ACC_PUBLIC
+       Code:
+         stack=1, locals=1, args_size=1
+            0: aload_0
+            1: invokespecial #1                  // Method java/lang/Object."<init>":()V
+            4: return
+         LineNumberTable:
+           line 3: 0
+   }
+   SourceFile: "Simple.java"
+   ```
+   
+   
+   
+   
    
    
    

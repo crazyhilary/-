@@ -9,12 +9,12 @@
 | u2             | major_version（主版本号）     | 1                     |
 | u2             | constant_pool_count（常量数） | 1                     |
 | cp_info        | constant_pool（常量池表）     | constant_pool_count-1 |
-| u2             | access_flags                  | 1                     |
-| u2             | this_class                    | 1                     |
-| u2             | supper_class                  | 1                     |
-| u2             | interfaces_count              | 1                     |
-| u2             | interfaces                    | interfaces_count      |
-| u2             | fields_count                  | 1                     |
+| u2             | access_flags（访问标识）      | 1                     |
+| u2             | this_class（当前类全限量名）  | 1                     |
+| u2             | supper_class（父类全限量名）  | 1                     |
+| u2             | interfaces_count（接口数量）  | 1                     |
+| u2             | interfaces（接口表）          | interfaces_count      |
+| u2             | fields_count（字段数量）      | 1                     |
 | field_info     | fields                        | fields_count          |
 | u2             | methods_count                 | 1                     |
 | method_info    | methods                       | methods_count         |
@@ -418,6 +418,16 @@
 | u2             | attributes_count       | 1                      |
 | attribute_info | attributes             | attributes_count       |
 
+**属性表结构**
+
+| 类型 | 名称                 | 数量             |
+| ---- | -------------------- | ---------------- |
+| u2   | attribute_name_index | 1                |
+| u4   | attribute_length     | 1                |
+| u1   | info                 | attribute_length |
+
+
+
 **Exceptions属性结构**
 
 | 类型 | 名称                  | 数量                 |
@@ -436,6 +446,13 @@
 | u2                | line_number_table_length | 1                        |
 | lline_number_info | line_number_table        | line_number_table_length |
 
+**line_number_info**
+
+| 类型 | 名称        | 数量 |
+| ---- | ----------- | ---- |
+| u2   | start_pc    | 1    |
+| u2   | line_number | 1    |
+
 **LocalVariableTable属性结构**
 
 | 类型                | 名称                        | 数量                        |
@@ -444,6 +461,8 @@
 | u4                  | attribute_length            | 1                           |
 | u2                  | local_variable_table_length | 1                           |
 | local_variable_info | local_variable_table        | local_variable_table_length |
+
+
 
 **Local_variable_info项目结构**
 
@@ -454,6 +473,25 @@
 | u2   | name_index       | 1    |
 | u2   | descriptor_index | 1    |
 | u2   | index            | 1    |
+
+**LocalVariableTypeTable属性结构**
+
+| 类型                | 名称                        | 数量                        |
+| ------------------- | --------------------------- | --------------------------- |
+| u2                  | attribute_name_inidex       | 1                           |
+| u4                  | attribute_length            | 1                           |
+| u2                  | local_variable_table_length | 1                           |
+| local_variable_info | local_variable_table        | local_variable_table_length |
+
+**Local_variable_type_info项目结构**
+
+| 类型 | 名称       | 数量 |
+| ---- | ---------- | ---- |
+| u2   | start_pc   | 1    |
+| u2   | length     | 1    |
+| u2   | name_index | 1    |
+| u2   | Signature  | 1    |
+| u2   | index      | 1    |
 
 **SourceFile属性结构**
 

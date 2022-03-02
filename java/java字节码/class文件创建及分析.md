@@ -347,6 +347,7 @@
    		
    0000		//exception_table_length = 0
    0000 		//attributes_count = 0
+   
    0000 		//attribute_name_index = 0 未指向任何数据，常量池第0项
    
    javap
@@ -385,6 +386,80 @@
    ```
    
    
+   
+   javac -g:lines
+   
+   ```
+   cafe babe 
+   0000 
+   003c 
+   000b 常量池11
+   
+   #1	0a			tag=10	//CONSTANT_Methodref_info
+   		00 02 	index = 2
+   		00 03 	index = 3
+   #2	07			tag=7		//CONSTANT_Class_info
+   		0004 		index = 4
+   #3	0c			tag=12	//CONSTANT_NameAndType_info
+   		00 05		index = 5
+   		00 06		index = 6
+   #4	01 			tag = 1	//CONSTANT_Utf8_info
+   		0010 		length = 16
+   		6a 61 76 61 2f 6c 61 6e 67 2f 4f 62 6a 65 63 74 	//java/lang/Object
+   #5	01			tag = 1	//CONSTANT_Utf8_info
+   		0006		length = 6
+   		3c 69 6e 69 74 3e			//<init>
+   #6	01 			tag = 1	//CONSTANT_Utf8_info
+   		0003 		length = 3
+   		28 29 56			//()V
+   #7	07 			tag = 7			//CONSTANT_Class_info
+   		0008 		index = 8
+   #8	01			tag= 1			//CONSTANT_Utf8_info
+   		001b		length = 27
+   		//com/hilary/classbyte/Simple
+   		63 6f 6d 2f 68 69 6c 61 72 79 2f 63 6c 61 73 73 62 79 74 65 2f 53 69 6d 70 6c 65 
+   #9	01			tag= 1			//CONSTANT_Utf8_info
+   		0004		length = 4
+   		43 6f 64 65		//Code
+   #10 01 			tag = 1			//CONSTANT_Utf8_info
+   		000f 		length = 15
+   		4c 69 6e 65 4e 75 6d 62 65 72 54 61 62 6c 65	//LineNumberTable		
+   0021			
+   0007		//index = 7    com/hilary/classbyte/Simple
+   0002		//index = 2			java/lang/Object
+   0000		//interfaces = 0
+   0000		//fields_count = 0
+   0001		//methods_count = 1
+   ###########methods 1##################
+   0001		//access_flags = ACC_PUBLIC
+   0005		//name_index = 5		<init>
+   0006		//desciptor_index = 6		()V
+   0001		//attributes_count = 1
+   ##########attribute_info############
+   ####Code属性###
+     0009		//attribute_name_index = 9
+     0000 001d	//attribute_length = 29
+     0001			//max_stack = 1
+     0001			//max_locals = 1
+     0000 0005		//code_length = 5
+         //指令
+         2a		aload_0
+         b7 		invokespecial
+         0001 	#1   //Method java/lang/Object."<init>":()V
+         b1		return
+     ############attributes################		
+     0000 	//exception_table_length = 0
+     0001 	//attributes_count = 1
+     000a	//attribute_name_index = 10
+     0000 0006 	//attribute_length = 6
+     ########LineNumberTable##########
+     0001 		//attribute_name_index = 1
+     0000 0003 	//attribute_length = 3
+   ##############################
+   0000 	 
+   
+   
+   ```
    
    
    

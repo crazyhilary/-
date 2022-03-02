@@ -341,7 +341,7 @@
 | u2             | attributes_count | 1                |
 | attribute_info | attributes       | attributes_count |
 
-**方法表结构**
+**method_info(方法表结构)**
 
 | 类型           | 名称             | 数量             |
 | -------------- | ---------------- | ---------------- |
